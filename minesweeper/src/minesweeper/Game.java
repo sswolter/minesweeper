@@ -9,9 +9,12 @@ public class Game {
 
 
     static boolean gameOver = false;
+    
+    
 
     public static void main(String[] args) {
 
+    	
         
         board.printGrid();
         
@@ -43,6 +46,9 @@ public class Game {
 
             board.unhide(row, col);
             board.getAdjMineNumber(row, col);
+            board.getAmountToWin();
+            System.out.print(board.amountToWin);
+            board.setAmountToWin();
 
 
             gameOver = board.end(row, col);
@@ -51,7 +57,7 @@ public class Game {
                 System.out.print("BOOM!");
             }
             
-            int remaining = board.gameWin();
+            int remaining = board.getAmountToWin();
             
             if(remaining == 0) {
                 System.out.print("Complete!");

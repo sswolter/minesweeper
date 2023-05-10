@@ -11,6 +11,7 @@ public class Board {
 	public int numberOfRows = 10;
 	public int numberOfColumns = 10;
 	public int numberOfMines = 10;
+	public int amountToWin = numberOfRows * numberOfColumns - numberOfMines;
 	
 	private Cell[][] cells;
 	
@@ -94,10 +95,16 @@ public class Board {
 
 	}
 	
-    public int gameWin() {
-    	int amount = numberOfRows * numberOfColumns - numberOfMines;
-		return amount--;
-    }
+
+	public int getAmountToWin() {
+		return amountToWin;
+	}
+
+
+	public void setAmountToWin() {
+		this.amountToWin = this.amountToWin - 1;
+	}
+
 
 	
 	public void printGrid() {
@@ -119,6 +126,8 @@ public class Board {
 
 	    }
 	}
+
+
 
 
 }
