@@ -78,7 +78,7 @@ public class Board {
 	        if (inputSquare.isMine()) {
 	            return '*';
 	        } else {
-	            return  String.valueOf(inputSquare.getAdjacentMines()).charAt(0);
+	            return (char)(inputSquare.getAdjacentMines() + '0');
 	        }
 	    }
 	}
