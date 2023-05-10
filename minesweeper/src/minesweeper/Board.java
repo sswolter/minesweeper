@@ -23,9 +23,7 @@ public class Board {
             for(int j = 0; j < numberOfColumns; j++) {
                 cells[i][j] = new Cell();
             }
-            
         }
-        
         createMines();
 	}
 	
@@ -52,14 +50,13 @@ public class Board {
 
 	    for (int i = row - 1; i <= row + 1; i++) {
 	        for (int j = col - 1; j <= col + 1; j++) {
-	            if (i >= 0 && i < numberOfRows && j >= 0 && j < numberOfColumns) { // check if square is within grid boundaries
+	            if (i >= 0 && i < numberOfRows && j >= 0 && j < numberOfColumns) { 
 	                if (cells[i][j].isMine()) {
 	                    mines++;
 	                }
 	            }
 	        }
 	    }
-
 	    cells[row][col].setAdjacentMines(mines);
 	}
 	
@@ -81,7 +78,7 @@ public class Board {
 	        if (inputSquare.isMine()) {
 	            return '*';
 	        } else {
-	            return (char) (inputSquare.getAdjacentMines() + '0');
+	            return  String.valueOf(inputSquare.getAdjacentMines()).charAt(0);
 	        }
 	    }
 	}
